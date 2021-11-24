@@ -20,7 +20,7 @@ namespace Carthagina
                 Year = 2021
             });
 
-            Console.ReadKey();
+            Console.WriteLine(customerTransactions.ToString());
         }
     }
 }
