@@ -7,10 +7,21 @@
     <ItemGroup>
       <PackageReference Include="Autofac" Version="6.3.0" />
       <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Carthagina.Database\Carthagina.Database.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="ConfigurationFiles\appsettings.json" />
+      <Content Include="ConfigurationFiles\config.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

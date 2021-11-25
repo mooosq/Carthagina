@@ -1,7 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using Carthagina.Core.Configuration.Interfaces;
+using Carthagina.Core.Exceptions;
 using Carthagina.Core.Models;
 using Carthagina.Core.Reports.Interfaces;
-using Carthagina.Core.Services;
 using Carthagina.Core.Services.Interfaces;
 
 namespace Carthagina.Core.Reports
@@ -9,10 +11,20 @@ namespace Carthagina.Core.Reports
     public class ReportGenerator : IReportGenerator
     {
         private readonly IDataAccess _dataAccess;
-        
+
         public ReportGenerator()
         {
-            _dataAccess = new DatabaseAccessService();
+            IConfiguration configuration = new Configuration.Configuration();
+
+            try
+            {
+                _dataAccess = configuration.ConfigureDataSource();
+            }
+            catch (AccessServiceNotFoundException ex)
+            {
+                Console.WriteLine($"{ex.Message}\nClosing...");
+                Environment.Exit(-1);
+            }
         }
 
         public AverageForTransactionsInGivenDate GetDailyTransactionsReport(Date date)

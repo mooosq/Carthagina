@@ -1,5 +1,5 @@
-﻿using Carthagina.Core.Reports;
-using Xunit;
+﻿using Xunit;
+using Carthagina.Core.Reports;
 
 namespace Carthagina.Core.Tests.Services
 {

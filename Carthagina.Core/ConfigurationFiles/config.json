@@ -1,0 +1,15 @@
+﻿{
+   "DatabaseDataSource": {
+       "IsDataSourceEnabled": true,
+       "UseInMemoryDatabase": true,
+       "ConnectionString": "SPECIFY CONNECTION STRING TO DATABASE"
+   },
+   "FileDataSource": {
+       "IsDataSourceEnabled": false,
+       "FilePath": "SPECIFY PATH TO DATA FILE"
+   },
+   "ApiDataSource": {
+       "IsDataSourceEnabled": false,
+       "ApiUrl": "SPECIFY URL TO API"
+   }
+}
